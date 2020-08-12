@@ -1,6 +1,6 @@
-import '../src/Infobox.js';
-import '../src/peta.js';
-import '../src/tabel.js';
+import '../src/infoBox.js';
+import '../src/Peta.js';
+import '../src/Table.js';
 
 
 const main = () => {
