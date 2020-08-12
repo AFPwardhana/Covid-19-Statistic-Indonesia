@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
-// import "leaflet/dist/leaflet.css";
+
 
 
 // lat: -3.843571, 

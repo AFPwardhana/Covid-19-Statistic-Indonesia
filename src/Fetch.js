@@ -1,6 +1,7 @@
 import '../src/Table.js';
 import '../src/infoBox.js';
 import '../src/Peta.js';
+import "leaflet/dist/leaflet.css";
 
 const main = () => {
 const urlAPI = "https://data.covid19.go.id/public/api/update.json" , urlAPI2 ="https://data.covid19.go.id/public/api/prov.json";

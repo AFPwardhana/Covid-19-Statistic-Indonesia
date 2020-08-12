@@ -21,11 +21,7 @@ const path = require('path');
                     
                 ]
             },
-            {
-                test: /\.png$/,
-                loader: 'url-loader',
-                query: { mimetype: 'image/png' }
-            },
+            { test: /\.(png|svg|jpe?g|gif|woff2?|ttf|eot)$/, use: [ 'file-loader' ] },
             { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ }
         ]
     }
