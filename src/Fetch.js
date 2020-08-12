@@ -1,7 +1,6 @@
+import '../src/Table.js';
 import '../src/infoBox.js';
 import '../src/Peta.js';
-import '../src/Table.js';
-
 
 const main = () => {
 const urlAPI = "https://data.covid19.go.id/public/api/update.json" , urlAPI2 ="https://data.covid19.go.id/public/api/prov.json";
@@ -17,6 +16,7 @@ const getData = ()=>{
       }
       else{
         renderTable(data.list_data);
+        
       }
     })
     .catch(error =>{
@@ -33,6 +33,7 @@ const getDataIndo = ()=>{
         }
         else{
           renderCard(dataIndo.update.total);
+        //   renderPeta();
           console.log(dataIndo.update.total);
         }
       })
@@ -66,7 +67,11 @@ const renderCard = (isi)=>{
   sembuh.innerHTML = isi.jumlah_sembuh;
   meninggal.innerHTML = isi.jumlah_meninggal;
 }
-
+// const renderPeta = ()=>{
+//     const petaIndo  = document.querySelector("#peta");
+//     petaIndo.innerHTML = "<Peta />";
+//     // ReactDOM.render(,document.getElementById(''));
+// }
 getData();
 getDataIndo();
 

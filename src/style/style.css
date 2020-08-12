@@ -85,3 +85,7 @@ display: block;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+.leaflet-container {
+    height: 150px;
+    width: 100%;
+  }

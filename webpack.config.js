@@ -9,7 +9,24 @@ const path = require('path');
     // define babel loader
     module: {
         rules: [
-            { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    
+                ]
+            },
+            {
+                test: /\.png$/,
+                loader: 'url-loader',
+                query: { mimetype: 'image/png' }
+            },
+            { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ }
         ]
     }
 };
