@@ -1,0 +1,11 @@
+{
+  "name": "baru3",
+  "version": "1.0.0",
+  "description": "coba yang ke-3 kalinya",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alam F.P.W",
+  "license": "ISC"
+}

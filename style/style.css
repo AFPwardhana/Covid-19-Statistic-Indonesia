@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+body{
+    background-color: #f4f4f4;
+}
+.container{
+    padding: 0;
+}
+.isi{
+    margin-top: 3.5rem;
+}
+.form-control{
+    border: none;
+    margin: 0 auto 1rem;
+    background-color: #f4f4f4;
+}
+.totalKasus{
+    font-weight: 800;
+    
+}
+h4,h5{
+    margin-bottom: 0;
+}
+
+.card-text:last-child{
+    font-size: 1rem;
+    text-align-last: right;
+
+}
+.results tr[visible='false'],.no-result{
+  display:none;
+}
+
+.results tr[visible='true']{
+    display:table-row;
+}
+/* buat scrolling  */
+.my-custom-scrollbar {
+    position: relative;
+    height: 450px;
+    overflow: auto;
+    }
+.table-wrapper-scroll-y {
+display: block;
+}
+.p-4{
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.app_stat{
+    display: flex;
+    justify-content: center;
+}
+      
+.card{
+    margin-top: 10px;
+    border-radius: 0px;
+    padding: .5rem;
+}
+.card h5{
+    text-align-last: right;
+    font-size: 1.1rem;
+    color: grey;
+   
+}
+.card p{
+    text-align-last: right;
+    font-weight: 800;
+}
+
+.extend-bottom{
+    margin-left: -1px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.extend-middle{
+    margin-left: -1px;
+
+}
+.extend-top{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
