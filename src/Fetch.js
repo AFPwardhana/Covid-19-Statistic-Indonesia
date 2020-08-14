@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/Table.js';
 import '../src/infoBox.js';
 import Peta from "../src/Peta.js";
 import "leaflet/dist/leaflet.css";
+import numeral from "numeral";
 
 const main = () => {
 const urlAPI = "https://data.covid19.go.id/public/api/update.json" , urlAPI2 ="https://data.covid19.go.id/public/api/prov.json";
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-// const [petaProvinsi, setPetaProvinsi] = useState([]);
 
 const getData = ()=>{
   fetch(proxyUrl + urlAPI2)
@@ -22,7 +22,7 @@ const getData = ()=>{
         renderTable(data.list_data);
         renderPeta(data.list_data);
       }
-      renderPeta(data.list_data);
+    
     })
     .catch(error =>{
       console.error(error);
@@ -48,26 +48,25 @@ const getDataIndo = ()=>{
     }
 const renderTable = (datas)=>{
   const listProvinsi  = document.querySelector("#table");
-  listProvinsi.innerHTML = "";;
-  datas.forEach(provinsi => {
+  listProvinsi.innerHTML = "";
+  datas.map(provinsi => {
     listProvinsi.innerHTML += `
     <tr>
       <th scope="row">${provinsi.key}</th>
-      <td>${provinsi.jumlah_kasus}</td>
-      <td>${provinsi.jumlah_sembuh}</td>
-      <td>${provinsi.jumlah_meninggal}</td>
+      <td>${numeral(provinsi.jumlah_kasus).format("0,0")}</td>
+      <td>${numeral(provinsi.jumlah_sembuh).format("0,0")}</td>
+      <td>${numeral(provinsi.jumlah_meninggal).format("0,0")}</td>
     </tr>`
-
     // console.log(`${provinsi.key} + ${provinsi.jumlah_kasus} + ${provinsi.jumlah_sembuh} + ${provinsi.jumlah_meninggal}`);
   });
 }
 const renderCard = (isi)=>{
-  const kasus  = document.querySelector(".extend-top p");
-  const sembuh  = document.querySelector(".extend-middle p");
-  const meninggal  = document.querySelector(".extend-bottom p");
-  kasus.innerHTML = isi.jumlah_positif;
-  sembuh.innerHTML = isi.jumlah_sembuh;
-  meninggal.innerHTML = isi.jumlah_meninggal;
+  const kasus  = $(".extend-top p");
+  const sembuh  = $(".extend-middle p");
+  const meninggal  = $(".extend-bottom p");
+  kasus.html(  numeral(isi.jumlah_positif).format("0,0"));
+  sembuh.html(  numeral(isi.jumlah_sembuh).format("0,0"));
+  meninggal.html(  numeral(isi.jumlah_meninggal).format("0,0"));
 }
 
 const renderPeta = (dataPeta)=>{ 

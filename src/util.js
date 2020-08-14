@@ -14,11 +14,10 @@ const casesTypeColors = {
       multiplier: 2000,
     },
   };
-export const showDataOnMap = (data, casesType = "jumlah_kasus") =>(
-  
+export const showDataOnMap = (data, casesType = "jumlah_kasus" ) =>(
   data.map((prov) => {
     return (
-      console.log(data),
+      console.log(casesType),
     <Circle
       key ={prov.key}
       center={[prov.lokasi.lat, prov.lokasi.lon]}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;1,700&family=Raleway:ital,wght@1,700&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,6 +7,7 @@
 }
 body{
     background-color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
 }
 .container{
     padding: 0;
@@ -19,7 +21,8 @@ body{
     background-color: #f4f4f4;
 }
 .totalKasus{
-    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
     
 }
 h4,h5{
@@ -54,7 +57,7 @@ display: block;
 .app_stat{
     display: flex;
     justify-content: center;
-}
+ }
       
 .card{
     margin-top: 10px;
@@ -63,7 +66,7 @@ display: block;
 }
 .card h5{
     text-align-last: right;
-    font-size: 1.1rem;
+    font-size: .8rem;
     color: grey;
    
 }
@@ -85,7 +88,11 @@ display: block;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+#peta.p-4{
+ padding: 1rem 0 0 !important;
+}
 .leaflet-container {
-    height: 150px;
+    margin-top: 1rem;
+    height: 200px;
     width: 100%;
   }
