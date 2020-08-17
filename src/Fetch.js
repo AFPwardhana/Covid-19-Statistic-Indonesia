@@ -56,22 +56,16 @@ const renderTable = (datas)=>{
       <td>${numeral(provinsi.jumlah_kasus).format("0,0")}</td>
       <td>${numeral(provinsi.jumlah_sembuh).format("0,0")}</td>
       <td>${numeral(provinsi.jumlah_meninggal).format("0,0")}</td>
-    </tr>`
-    // console.log(`${provinsi.key} + ${provinsi.jumlah_kasus} + ${provinsi.jumlah_sembuh} + ${provinsi.jumlah_meninggal}`);
-  });
+    </tr>`});
 }
 const renderCard = (isi)=>{
-  const kasus  = $(".extend-top p");
-  const sembuh  = $(".extend-middle p");
-  const meninggal  = $(".extend-bottom p");
-  kasus.html(  numeral(isi.jumlah_positif).format("0,0"));
-  sembuh.html(  numeral(isi.jumlah_sembuh).format("0,0"));
-  meninggal.html(  numeral(isi.jumlah_meninggal).format("0,0"));
+  $(".extend-top p").html(numeral(isi.jumlah_positif).format("0,0"));
+  $(".extend-middle p").html(numeral(isi.jumlah_sembuh).format("0,0"));
+  $(".extend-bottom p").html(numeral(isi.jumlah_meninggal).format("0,0"));
 }
 
-const renderPeta = (dataPeta)=>{ 
-  console.log(dataPeta);
-  ReactDOM.render(<Peta provinsi={dataPeta} />,document.getElementById('peta'));
+const renderPeta = (dataPeta)=>{
+   ReactDOM.render(<Peta provinsi={dataPeta}  />,document.getElementById('peta'));
 }
 getData();
 getDataIndo();

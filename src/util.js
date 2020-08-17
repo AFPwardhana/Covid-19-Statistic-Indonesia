@@ -1,33 +1,34 @@
 import React from "react";
-import { Circle } from "react-leaflet";
-const casesTypeColors = {
-    jumlah_kasus: {
-      hex: "#CC1034",
-      multiplier: 800,
-    },
-    jumlah_sembuh: {
-      hex: "#7dd71d",
-      multiplier: 1200,
-    },
-    jumlah_meninggal: {
-      hex: "#fb4443",
-      multiplier: 2000,
-    },
-  };
-export const showDataOnMap = (data, casesType = "jumlah_kasus" ) =>(
-  data.map((prov) => {
+import { Circle , Popup } from "react-leaflet";
+import numeral from "numeral";
+
+export const showDataOnMap = (data ) =>(
+  data.map(prov => {
     return (
-      console.log(casesType),
-    <Circle
+      <Circle
       key ={prov.key}
       center={[prov.lokasi.lat, prov.lokasi.lon]}
-      color={casesTypeColors[casesType].hex}
-      fillColor={casesTypeColors[casesType].hex}
+      color={"#CC1034"}
+      fillColor={"#CC1034"}
       fillOpacity={0.4}
       radius={
-        Math.sqrt(prov[casesType]) * casesTypeColors[casesType].multiplier
+        Math.sqrt(prov["jumlah_kasus"]) * 800
       }
     >
+      <Popup>
+        <div className="info-container">
+          <div className="info-name">{prov.key}</div>
+          <div className="info-confirmed">
+            Jumlah Kasus: {numeral(prov.jumlah_kasus).format("0,0")}
+          </div>
+          <div className="info-recovered">
+            Jumlah Sembuh: {numeral(prov.jumlah_sembuh).format("0,0")}
+          </div>
+          <div className="info-deaths">
+            Jumlah Meninggal: {numeral(prov.jumlah_meninggal).format("0,0")}
+          </div>
+        </div>
+      </Popup>
     </Circle>
   );})
 );
