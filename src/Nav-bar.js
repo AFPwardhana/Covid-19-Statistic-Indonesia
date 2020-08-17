@@ -1,4 +1,4 @@
-class NavBar extends HTMLElement {
+class NaBar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -6,4 +6,4 @@ class NavBar extends HTMLElement {
        </nav> `}
 }
 
-window.customElements.define("na-bar", NavBar);
+window.customElements.define("na-bar", NaBar);
