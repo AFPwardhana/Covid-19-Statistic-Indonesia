@@ -6,4 +6,4 @@ class NavBar extends HTMLElement {
        </nav> `}
 }
 
-window.customElements.define("nav-bar", NavBar);
+window.customElements.define("na-bar", NavBar);
