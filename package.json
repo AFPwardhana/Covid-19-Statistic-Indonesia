@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack",
+    "build": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alam F.P.W",
@@ -27,6 +27,7 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "leaflet": "^1.6.0",
     "numeral": "^2.0.6",
