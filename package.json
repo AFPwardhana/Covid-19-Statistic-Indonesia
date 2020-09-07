@@ -4,8 +4,8 @@
   "description": "coba yang ke-3 kalinya",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
+    "dev": "webpack-dev-server",
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alam F.P.W",
